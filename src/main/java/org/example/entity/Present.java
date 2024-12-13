@@ -1,14 +1,14 @@
 package org.example.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-@ToString
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@Builder
+@Getter
+@Setter
 public class Present {
     private String name;
     private String description;
