@@ -1,10 +1,10 @@
-package steps;
+package thursday.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.entity.Present;
-import org.example.service.PresentService;
+import org.example.thrusday.entity.Present;
+import org.example.thrusday.service.PresentService;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 
 public class ManagingChristmasPresentsPositiveScenariosSteps {
     private final PresentService presentService = new PresentService();
+    private Exception caughtException;
 
     @Given("the giftList contains some presents:")
     public void the_gift_list_contains_some_presents(List<Map<String, String>> presents) {
@@ -23,22 +24,33 @@ public class ManagingChristmasPresentsPositiveScenariosSteps {
 
     @When("I add a present with name {string} and description {string}")
     public void i_add_a_present_with_name_and_description(String name, String description) {
-        presentService.addPresent(new Present(name, description));
+        try {
+            presentService.addPresent(new Present(name, description));
+        } catch (Exception exception) {
+            caughtException = exception;
+        }
     }
 
     @When("I remove the following presents:")
     public void i_remove_the_following_presents(List<Map<String, String>> presentsToRemove) {
-        for (Map<String, String> present : presentsToRemove) {
-            presentService.removePresent(present.get("name"));
+        presentsToRemove.stream()
+                .map(present -> present.get("name"))
+                .forEach(presentService::removePresent);
+    }
+
+    @When("I remove a present with name {string}")
+    public void i_remove_a_present_with_name(String name) {
+        try {
+            presentService.removePresent(name);
+        } catch (Exception exception) {
+            caughtException = exception;
         }
     }
 
-    @Then("the gift list should contain a present with the name {string}")
-    public void the_gift_list_should_contain_a_present_with_the_name(String name) {
-        boolean presentExists = presentService.getGiftList().stream()
-                .anyMatch(present -> present.getName().equals(name));
-
-        assertTrue(String.format("Gift list should contain a present with name %s", name), presentExists);
+    @Then("the gift list should still contain a present with the name {string}")
+    public void the_gift_list_should_still_contain_a_present_with_name(String name) {
+        assertTrue(String.format("Gift list should contain a present with name %s", name),
+                giftListContainsPresentWithTheName(name));
     }
 
     @Then("the gift list should not contain a present with name {string}")
@@ -47,10 +59,10 @@ public class ManagingChristmasPresentsPositiveScenariosSteps {
                 giftListContainsPresentWithTheName(name));
     }
 
-    @Then("the gift list should still contain a present with name {string}")
-    public void the_gift_list_should_still_contain_a_present_with_name(String name) {
-        assertTrue(String.format("Gift list should contain a present with name %s", name),
-                giftListContainsPresentWithTheName(name));
+
+    @Then("I should receive an error saying {string}")
+    public void i_should_receive_an_error_saying(String errorMessage) {
+        assertEquals(caughtException.getMessage(), errorMessage);
     }
 
     private boolean giftListContainsPresentWithTheName(final String name) {

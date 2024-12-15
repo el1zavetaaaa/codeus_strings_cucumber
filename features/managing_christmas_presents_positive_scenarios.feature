@@ -9,7 +9,7 @@ Feature: Managing Christmas Presents
       | Kindle          | E-reader by Amazon      |
       | Nintendo Switch | Portable gaming console |
     When I add a present with name "AirPods Max" and description "AirPods Max – Studio sound, zero distractions."
-    Then the gift list should contain a present with the name "AirPods Max"
+    Then the gift list should still contain a present with the name "AirPods Max"
 
   Scenario: Remove two items from the gift list successfully
     Given the giftList contains some presents:
@@ -24,5 +24,5 @@ Feature: Managing Christmas Presents
       | AirPods Max |
     Then the gift list should not contain a present with name "Kindle"
     And the gift list should not contain a present with name "AirPods Max"
-    And the gift list should still contain a present with name "Nintendo Switch"
-    And the gift list should still contain a present with name "PS5"
+    And the gift list should still contain a present with the name "Nintendo Switch"
+    And the gift list should still contain a present with the name "PS5"

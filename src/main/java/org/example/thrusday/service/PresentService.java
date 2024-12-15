@@ -1,16 +1,17 @@
-package org.example.service;
+package org.example.thrusday.service;
 
+import lombok.Getter;
 import lombok.SneakyThrows;
-import org.example.entity.Present;
-import org.example.exceptions.PresentAlreadyExistsException;
-import org.example.exceptions.PresentNotFoundException;
+import org.example.thrusday.entity.Present;
+import org.example.thrusday.exceptions.PresentAlreadyExistsException;
+import org.example.thrusday.exceptions.PresentNotFoundException;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+@Getter
 public class PresentService {
-    private Set<Present> giftList = new HashSet<>();
+    private final Set<Present> giftList = new HashSet<>();
 
     @SneakyThrows
     public void addPresent(Present present) {
@@ -34,10 +35,6 @@ public class PresentService {
                 .filter(present -> present.getName().equals(name))
                 .findFirst()
                 .orElseThrow(() -> new PresentNotFoundException(String.format("Present with the name %s is not found.", name)));
-    }
-
-    public Set<Present> getGiftList() {
-        return giftList;
     }
 
 }
