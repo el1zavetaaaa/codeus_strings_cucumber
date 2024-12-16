@@ -3,8 +3,8 @@ package thursday.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.thrusday.entity.Present;
-import org.example.thrusday.service.PresentService;
+import org.example.thursday.entity.Present;
+import org.example.thursday.service.PresentService;
 
 import java.util.List;
 import java.util.Map;

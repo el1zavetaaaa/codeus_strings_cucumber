@@ -1,10 +1,10 @@
-package org.example.thrusday.service;
+package org.example.thursday.service;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
-import org.example.thrusday.entity.Present;
-import org.example.thrusday.exceptions.PresentAlreadyExistsException;
-import org.example.thrusday.exceptions.PresentNotFoundException;
+import org.example.thursday.entity.Present;
+import org.example.thursday.exceptions.PresentAlreadyExistsException;
+import org.example.thursday.exceptions.PresentNotFoundException;
 
 import java.util.HashSet;
 import java.util.Set;
