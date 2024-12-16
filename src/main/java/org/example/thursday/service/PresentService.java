@@ -18,7 +18,7 @@ public class PresentService {
         if (present == null || present.getName() == null || present.getName().isBlank()) {
             throw new IllegalArgumentException("Present or present name cannot be null/empty.");
         }
-        if (giftList.contains(present)) {
+        if (giftList.stream().anyMatch(existingPresent -> existingPresent.getName().equalsIgnoreCase(present.getName()))) {
             throw new PresentAlreadyExistsException(String.format("Present with name %s already exists", present.getName()));
         }
         giftList.add(present);

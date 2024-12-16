@@ -3,7 +3,9 @@ package org.example.tuesday.warmup;
 public class StringExercises {
 
     public static boolean isStringFromPool() {
-        throw new UnsupportedOperationException("Exercise not completed");
+        String literal = "hello";
+        String created = new String("hello").intern();
+        return literal == created;
     }
 
     public static String demonstrateImmutability(String original) {
