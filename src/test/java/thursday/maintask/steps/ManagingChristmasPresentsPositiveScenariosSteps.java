@@ -1,10 +1,10 @@
-package thursday.steps;
+package thursday.maintask.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.thursday.entity.Present;
-import org.example.thursday.service.PresentService;
+import org.example.thursday.maintask.entity.Present;
+import org.example.thursday.maintask.service.PresentService;
 
 import java.util.List;
 import java.util.Map;

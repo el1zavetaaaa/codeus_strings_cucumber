@@ -1,4 +1,4 @@
-package org.example.thursday.entity;
+package org.example.thursday.maintask.entity;
 
 import lombok.*;
 
