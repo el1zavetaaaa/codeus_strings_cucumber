@@ -28,19 +28,4 @@ You should extract all numerics to a String, if there are more than 1 numeric in
 *If the first address line starts with **"Flat", "Fl", "Apartment", "Apt"** and is followed by a **single letter**<br/>
 --> the letter should be added to the number*<br/>
 
-"Flat A" "73 Baker Street" --> "73A"
-
-2. **Extract house or building name.** 
-
-Here we will assume that the building name is written on the 1st or second string from the list.</br> 
-We will have 2 rules here:
-
-1. if the first line is started with "Flat", "Fl", "Apartment", "Apt" and is followed by a single letter<br/>
---> we will assume that the building name is the second line and the output should be the following:<br/>
- 
-"Flat C" "Tulip Cottage" --> "Tulip Cottage C"
-"Flat C" "73 Tulip Cottage" --> "Tulip Cottage 73C"
-
-2. In any other case we will assume that the building name is the first line.
-
-"Tulip Cottage", "Baker Street" --> "Tulip Cottage"
+- "Flat A" "73 Baker Street" --> "73A"
