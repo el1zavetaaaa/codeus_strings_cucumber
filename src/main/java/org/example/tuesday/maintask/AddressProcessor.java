@@ -14,7 +14,7 @@ public class AddressProcessor {
      * Processes a list of address lines to extract numerics and building name.
      *
      * @param addressLines List of address lines
-     * @return A map containing extracted numerics and building name
+     * @return String containing extracted numerics
      */
     public static String processAddress(List<String> addressLines) {
         validateInput(addressLines);
