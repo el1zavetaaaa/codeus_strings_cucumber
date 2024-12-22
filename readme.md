@@ -37,6 +37,6 @@ public class RunCucumberTest {
 ```
 2. Complete instructions inside [managing_christmas_presents_positive_scenarios.feature](features%2Ffeatures%2Fmanaging_christmas_presents_positive_scenarios.feature) ✅.
 3. Complete instructions inside [managing_christmas_presents_negative_scenarios.feature](features%2Ffeatures%2Fmanaging_christmas_presents_negative_scenarios.feature) ✅.
-4. complete instructions inside [ManagingChristmasPresentsPositiveScenariosSteps.java](src%2Ftest%2Fjava%2Fthursday%2Fmaintask%2Fsteps%2FManagingChristmasPresentsPositiveScenariosSteps.java) ✅.
+4. Complete instructions inside [ManagingChristmasPresentsPositiveScenariosSteps.java](src%2Ftest%2Fjava%2Fthursday%2Fmaintask%2Fsteps%2FManagingChristmasPresentsPositiveScenariosSteps.java) ✅.
 
 # CONGRATS! You completed all the tasks! ❄️
