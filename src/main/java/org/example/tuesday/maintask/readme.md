@@ -1,14 +1,14 @@
-# Task Overview
+# Task Overview 👓
 
 You will receive a list of strings.<br/>
 
-- Each string corresponds to the part of the customer's address. 
-- There is no granted specific order of the strings in the list.
-- However, there is a list of rules how you should work with the address lines.
+- Each string corresponds to the part of the customer's address  🎒. 
+- There is no granted specific order of the strings in the list 💼.
+- However, there is a list of rules how you should work with the address lines 👜.
 
-# How to extract needed information from the list of addresses 
+# How to extract needed information from the list of addresses 👑
 
-1. **You should extract all the numerics from the lines.** <br/>
+**You should extract all the numerics from the lines.** <br/>
 
 You should extract all numerics to a String, if there are more than 1 numeric in the list
  --> they should be separated by a colon. 
