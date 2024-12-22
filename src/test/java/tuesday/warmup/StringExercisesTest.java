@@ -57,11 +57,11 @@ public class StringExercisesTest {
 
     private static Stream<Arguments> provideCountCharacterOccurrencesParameters() {
         return Stream.of(
-                Arguments.of(Named.named("Count 'a' in 'banana' -> 3", "banana"), 'a', 3),
-                Arguments.of(Named.named("Count 'z' in 'apple' -> 0", "apple"), 'z', 0),
-                Arguments.of(Named.named("Count 'o' in 'hello' -> 1", "hello"), 'o', 1),
-                Arguments.of(Named.named("Count 'a' in 'aaaa' -> 4", "aaaa"), 'a', 4),
-                Arguments.of(Named.named("Count 'b' in 'bubble' -> 3", "bubble"), 'b', 3)
+                Arguments.of(Named.named("'banana', 'a' => 3", "banana"), 'a', 3),
+                Arguments.of(Named.named("'apple', 'z' => 0", "apple"), 'z', 0),
+                Arguments.of(Named.named("'hello', 'o' => 1", "hello"), 'o', 1),
+                Arguments.of(Named.named("'aaaa' , 'a' => 4", "aaaa"), 'a', 4),
+                Arguments.of(Named.named("'bubble', 'b' => 3", "bubble"), 'b', 3)
         );
     }
 
@@ -82,11 +82,11 @@ public class StringExercisesTest {
 
     private static Stream<Arguments> provideReverseStringParameters() {
         return Stream.of(
-                Arguments.of(Named.named("Reverse 'hello' -> 'olleh'", "hello"), "olleh"),
-                Arguments.of(Named.named("Reverse 'Java' -> 'avaJ'", "Java"), "avaJ"),
-                Arguments.of(Named.named("Reverse 'racecar' -> 'racecar'", "racecar"), "racecar"),
-                Arguments.of(Named.named("Reverse '12321' -> '12321'", "12321"), "12321"),
-                Arguments.of(Named.named("Reverse 'Hello, World!' -> '!dlroW ,olleH'", "Hello, World!"), "!dlroW ,olleH")
+                Arguments.of(Named.named("'hello' => 'olleh'", "hello"), "olleh"),
+                Arguments.of(Named.named("'Java' => 'avaJ'", "Java"), "avaJ"),
+                Arguments.of(Named.named("'racecar' => 'racecar'", "racecar"), "racecar"),
+                Arguments.of(Named.named("'12321' => '12321'", "12321"), "12321"),
+                Arguments.of(Named.named("'Hello, World!' => '!dlroW ,olleH'", "Hello, World!"), "!dlroW ,olleH")
         );
     }
 
@@ -107,11 +107,11 @@ public class StringExercisesTest {
 
     private static Stream<Arguments> providePalindromeParameters() {
         return Stream.of(
-                Arguments.of(Named.named("Palindrome 'madam'", "madam")),
-                Arguments.of(Named.named("Palindrome 'racecar'", "racecar")),
-                Arguments.of(Named.named("Palindrome '12321'", "12321")),
-                Arguments.of(Named.named("Palindrome 'abba'", "abba")),
-                Arguments.of(Named.named("Palindrome 'a'", "a"))
+                Arguments.of(Named.named("'madam' => true", "madam")),
+                Arguments.of(Named.named("'racecar' => true", "racecar")),
+                Arguments.of(Named.named("'12321' => true", "12321")),
+                Arguments.of(Named.named("'abba' => true", "abba")),
+                Arguments.of(Named.named("'a' => true", "a"))
         );
     }
 
@@ -124,11 +124,11 @@ public class StringExercisesTest {
 
     private static Stream<Arguments> provideNonPalindromeParameters() {
         return Stream.of(
-                Arguments.of(Named.named("Non-palindrome 'hello'", "hello")),
-                Arguments.of(Named.named("Non-palindrome 'java'", "java")),
-                Arguments.of(Named.named("Non-palindrome 'world'", "world")),
-                Arguments.of(Named.named("Non-palindrome '12345'", "12345")),
-                Arguments.of(Named.named("Non-palindrome 'notapalindrome'", "notapalindrome"))
+                Arguments.of(Named.named("'hello' => false", "hello")),
+                Arguments.of(Named.named("'java' => false", "java")),
+                Arguments.of(Named.named("'world' => false", "world")),
+                Arguments.of(Named.named("'12345' => false", "12345")),
+                Arguments.of(Named.named("'notapalindrome' => false", "notapalindrome"))
         );
     }
 
