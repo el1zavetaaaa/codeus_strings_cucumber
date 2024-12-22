@@ -87,7 +87,7 @@ public class AddressProcessor {
         Matcher matcher = NUMERIC_PATTERN.matcher(line);
         if (matcher.find()) {
             String match = matcher.group().replace(" ", "");
-            line.delete(matcher.start(), matcher.end()); // Remove the matched numeric part from the line
+            line.delete(matcher.start(), matcher.end());
             return match;
         }
         return "";
