@@ -1,4 +1,4 @@
-package org.example.tuesday.warmup;
+package org.codeus.tuesday.warmup;
 
 public class StringExercises {
 

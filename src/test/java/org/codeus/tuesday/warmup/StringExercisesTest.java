@@ -1,6 +1,5 @@
-package tuesday.warmup;
+package org.codeus.tuesday.warmup;
 
-import org.example.tuesday.warmup.StringExercises;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Named;

@@ -1,10 +1,10 @@
-package org.example.thursday.maintask.service;
+package org.codeus.thursday.maintask.service;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
-import org.example.thursday.maintask.entity.Present;
-import org.example.thursday.maintask.exceptions.PresentAlreadyExistsException;
-import org.example.thursday.maintask.exceptions.PresentNotFoundException;
+import org.codeus.thursday.maintask.entity.Present;
+import org.codeus.thursday.maintask.exceptions.PresentAlreadyExistsException;
+import org.codeus.thursday.maintask.exceptions.PresentNotFoundException;
 
 import java.util.HashSet;
 import java.util.Set;
