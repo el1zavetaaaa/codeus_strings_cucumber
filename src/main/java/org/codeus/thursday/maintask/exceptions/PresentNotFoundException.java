@@ -1,4 +1,4 @@
-package org.example.thursday.maintask.exceptions;
+package org.codeus.thursday.maintask.exceptions;
 
 public class PresentNotFoundException extends Exception {
     public PresentNotFoundException(String message) {

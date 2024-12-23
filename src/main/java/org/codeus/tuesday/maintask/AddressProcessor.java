@@ -1,4 +1,4 @@
-package org.example.tuesday.maintask;
+package org.codeus.tuesday.maintask;
 
 import java.util.Arrays;
 import java.util.List;

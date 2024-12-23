@@ -1,4 +1,4 @@
-package thursday.maintask.steps;
+package org.codeus.thursday.maintask.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

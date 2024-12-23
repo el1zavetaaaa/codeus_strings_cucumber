@@ -1,4 +1,4 @@
-package org.example.thursday.warmup;
+package org.codeus.thursday.warmup;
 
 import java.util.regex.Pattern;
 
