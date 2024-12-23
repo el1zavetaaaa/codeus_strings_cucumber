@@ -5,7 +5,7 @@ public class StringExercises {
     public static boolean isStringFromPool() {
         String literal = "hello";
         String created = new String("hello").intern();
-        return literal == created;
+        return literal.equals(created);
     }
 
     public static String demonstrateImmutability(String original) {
