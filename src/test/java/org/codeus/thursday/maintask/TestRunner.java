@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"features"},
         glue = {"org/codeus/thursday/maintask/steps"},
-        plugin = {"pretty", "html:target/cucumber-reports"},
-        dryRun = false
+        plugin = {"pretty", "html:target/cucumber-reports"}
 )
 public class TestRunner {
 }

@@ -47,7 +47,7 @@ public class ManagingChristmasPresentsPositiveScenariosSteps {
         }
     }
 
-    @Then("the gift list should still contain a present with the name {string}")
+    @Then("the gift list should (still) contain a present with the name {string}")
     public void the_gift_list_should_still_contain_a_present_with_name(String name) {
         assertTrue(String.format("Gift list should contain a present with name %s", name),
                 giftListContainsPresentWithTheName(name));
