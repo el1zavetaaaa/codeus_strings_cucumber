@@ -1,7 +1,7 @@
 # Overview 👓
 
 This repository can be used to learn/remember Java Strings, Patterns and the Cucumber framework, which is used for BDD testing.
-- In this project, you'll integrate Cucumber scenarios with the JUnit 4 framework.🌛
+- In this project, you'll integrate Cucumber scenarios with the JUnit 5 framework.🌛
 - You'll complete exercises related to the most common questions about Strings in technical interviews.🌜
 - After completing the AddressProcessor exercise, you'll be a Patterns guru. 💅
 --------------------------------------------
@@ -25,13 +25,10 @@ The name of the class could be arbitrary. ✅<br/>
 
 <b>EXAMPLE</b><br/>
 ```
-@RunWith(Cucumber.class)
-@CucumberOptions(
-   features = {"path/to/your/feature/package"},
-   glue = {"path/to/your/step/definitions"},
-   plugin = {"pretty", "html:target/cucumber-reports"} #used for generating console logs
-)
-public class RunCucumberTest {
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("feature/package/path") #feature package shoul be created inside the package src/test/resources
+public class TestRunner {
 }
 ```
 2. Complete instructions inside [managing_christmas_presents_positive_scenarios.feature](features%2Ffeatures%2Fmanaging_christmas_presents_positive_scenarios.feature) ✅.
