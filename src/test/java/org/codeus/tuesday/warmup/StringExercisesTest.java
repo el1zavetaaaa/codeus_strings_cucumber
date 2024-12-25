@@ -1,8 +1,8 @@
 package org.codeus.tuesday.warmup;
 
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Named;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,7 +10,8 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * {@link StringExercisesTest} validates the correctness of methods in {@link StringExercises}.
@@ -21,8 +22,8 @@ public class StringExercisesTest {
     @DisplayName("Verify string literals and interned strings point to the same object (string pool behavior)")
     @Test
     public void testIsStringFromPool() {
-        assertTrue("String literals and interned strings should refer to the same object",
-                StringExercises.isStringFromPool());
+        assertTrue(StringExercises.isStringFromPool(),
+                "String literals and interned strings should refer to the same object");
     }
 
     @DisplayName("Verify demonstrateImmutability preserves original string after various operations")
@@ -30,28 +31,27 @@ public class StringExercisesTest {
     public void testDemonstrateImmutability() {
         String original = "immutable";
         String result = StringExercises.demonstrateImmutability(original);
-        assertEquals("The original string should remain unchanged", original, result);
+        assertEquals(original, result, "The original string should remain unchanged");
 
         String modifiedResult = result.replace("a", "o").toUpperCase();
-        assertNotEquals("String operations should not modify the original string", original, modifiedResult);
+        assertNotEquals(original, modifiedResult, "String operations should not modify the original string");
 
-        assertEquals("The original string should still be unchanged", original, result);
+        assertEquals(original, result, "The original string should still be unchanged");
     }
 
     @DisplayName("countCharacterOccurrences should throw IllegalArgumentException for null or empty input")
     @ParameterizedTest
     @NullAndEmptySource
     public void testCountCharacterOccurrencesInvalidInputs(String input) {
-        assertThrows("Expected countCharacterOccurrences to throw IllegalArgumentException for input: " + input,
-                IllegalArgumentException.class, () -> StringExercises.countCharacterOccurrences(input, 'a'));
+        assertThrows(IllegalArgumentException.class, () -> StringExercises.countCharacterOccurrences(input, 'a'), "Expected countCharacterOccurrences to throw IllegalArgumentException for input: " + input);
     }
 
     @DisplayName("Verify countCharacterOccurrences counts correctly for various strings")
     @ParameterizedTest(name = "{0}")
     @MethodSource("provideCountCharacterOccurrencesParameters")
     void testCountCharacterOccurrences(String input, char character, int expectedCount) {
-        assertEquals("Incorrect count for input: " + input + " and character: " + character,
-                expectedCount, StringExercises.countCharacterOccurrences(input, character));
+        assertEquals(expectedCount, StringExercises.countCharacterOccurrences(input, character),
+                "Incorrect count for input: " + input + " and character: " + character);
     }
 
     private static Stream<Arguments> provideCountCharacterOccurrencesParameters() {
@@ -68,15 +68,15 @@ public class StringExercisesTest {
     @ParameterizedTest
     @NullAndEmptySource
     public void testReverseStringInvalidInputs(String input) {
-        assertThrows("Expected reverseString to throw IllegalArgumentException for input: " + input,
-                IllegalArgumentException.class, () -> StringExercises.reverseString(input));
+        assertThrows(IllegalArgumentException.class, () -> StringExercises.reverseString(input),
+                "Expected reverseString to throw IllegalArgumentException for input: " + input);
     }
 
     @DisplayName("Verify reverseString reverses correctly for various strings")
     @ParameterizedTest(name = "{0}")
     @MethodSource("provideReverseStringParameters")
     void testReverseString(String input, String expectedReversed) {
-        assertEquals("Incorrect reversed string for input: " + input, expectedReversed, StringExercises.reverseString(input));
+        assertEquals(StringExercises.reverseString(input), expectedReversed, "Incorrect reversed string for input: " + input);
     }
 
     private static Stream<Arguments> provideReverseStringParameters() {
@@ -93,15 +93,16 @@ public class StringExercisesTest {
     @ParameterizedTest
     @NullAndEmptySource
     public void testIsPalindromeInvalidInputs(String input) {
-        assertThrows("Expected isPalindrome to throw IllegalArgumentException for input: " + input,
-                IllegalArgumentException.class, () -> StringExercises.isPalindrome(input));
+        assertThrows(IllegalArgumentException.class, () -> StringExercises.isPalindrome(input),
+                "Expected isPalindrome to throw IllegalArgumentException for input: " + input);
     }
 
     @DisplayName("Verify isPalindrome detects palindromes correctly")
     @ParameterizedTest(name = "{0}")
     @MethodSource("providePalindromeParameters")
     public void testIsPalindromeTrue(String input) {
-        assertTrue("Expected the string to be a palindrome: " + input, StringExercises.isPalindrome(input));
+        assertTrue(StringExercises.isPalindrome(input),
+                "Expected the string to be a palindrome: " + input);
     }
 
     private static Stream<Arguments> providePalindromeParameters() {
@@ -118,7 +119,8 @@ public class StringExercisesTest {
     @ParameterizedTest(name = "{0}")
     @MethodSource("provideNonPalindromeParameters")
     public void testIsPalindrome_False(String input) {
-        assertFalse("Expected the string to not be a palindrome: " + input, StringExercises.isPalindrome(input));
+        assertFalse(StringExercises.isPalindrome(input),
+                "Expected the string to not be a palindrome: " + input);
     }
 
     private static Stream<Arguments> provideNonPalindromeParameters() {

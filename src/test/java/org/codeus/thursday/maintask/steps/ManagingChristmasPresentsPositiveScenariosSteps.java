@@ -9,7 +9,8 @@ import org.codeus.thursday.maintask.service.PresentService;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class ManagingChristmasPresentsPositiveScenariosSteps {
     private final PresentService presentService = new PresentService();
@@ -49,20 +50,20 @@ public class ManagingChristmasPresentsPositiveScenariosSteps {
 
     @Then("the gift list should (still) contain a present with the name {string}")
     public void the_gift_list_should_still_contain_a_present_with_name(String name) {
-        assertTrue(String.format("Gift list should contain a present with name %s", name),
-                giftListContainsPresentWithTheName(name));
+        assertTrue(giftListContainsPresentWithTheName(name),
+                String.format("Gift list should contain a present with name %s", name));
     }
 
     @Then("the gift list should not contain a present with name {string}")
     public void the_gift_list_should_not_contain_a_present_with_name(String name) {
-        assertFalse(String.format("Gift list should contain a present with name %s", name),
-                giftListContainsPresentWithTheName(name));
+        assertFalse(giftListContainsPresentWithTheName(name),
+                String.format("Gift list should contain a present with name %s", name));
     }
 
 
     @Then("I should receive an error saying {string}")
     public void i_should_receive_an_error_saying(String errorMessage) {
-        assertEquals(caughtException.getMessage(), errorMessage);
+        assertEquals(errorMessage, caughtException.getMessage());
     }
 
     private boolean giftListContainsPresentWithTheName(final String name) {

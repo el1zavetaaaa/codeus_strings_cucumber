@@ -1,14 +1,11 @@
 package org.codeus.thursday.maintask;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        features = {"features"},
-        glue = {"org/codeus/thursday/maintask/steps"},
-        plugin = {"pretty", "html:target/cucumber-reports"}
-)
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("features")
 public class TestRunner {
 }
