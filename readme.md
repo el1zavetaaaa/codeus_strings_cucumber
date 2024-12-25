@@ -29,8 +29,7 @@ The name of the class could be arbitrary. ✅<br/>
 @CucumberOptions(
    features = {"path/to/your/feature/package"},
    glue = {"path/to/your/step/definitions"},
-   plugin = {"pretty", "html:target/cucumber-reports"}, #used for generating console logs
-   dryRun = true #verified that all mappings have the corresponded steps
+   plugin = {"pretty", "html:target/cucumber-reports"} #used for generating console logs
 )
 public class RunCucumberTest {
 }
